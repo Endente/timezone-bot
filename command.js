@@ -4,7 +4,7 @@ module.exports = (client, aliases, callback) => {
     if (typeof aliases === 'string'){
         aliases = [aliases]
     }
-    client.on("message", messageCreate => {
+    client.on("messageCreate", messageCreate => {
         const { content } = messageCreate;
         aliases.forEach(alias => {
             const command = `${prefix}${alias}`
