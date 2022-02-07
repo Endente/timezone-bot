@@ -1,4 +1,9 @@
 {
     "token": "",
-    "prefix":"!"
+    "prefix":"!",
+    "dbUser":"",
+    "dbPass":"",
+    "dbAddress":"",
+    "dbPort":"",
+    "dbServer":""
 }
