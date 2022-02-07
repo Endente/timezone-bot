@@ -4,8 +4,8 @@ const config = require('./config.json')
 const command = require('./command.js');
 client.on('ready', () => {
     console.log('Bot is now online.')
-    command(client, "test", messageCreate => {
-        messageCreate.channel.send("Test successfully.")
+    command(client, 'test', messageCreate => {
+        messageCreate.channel.send('Test successfully.')
     })
 })
 client.login(config.token)
