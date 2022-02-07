@@ -8,10 +8,10 @@ function logToConsole(message){
     console.log(`Running "${message}"; Requested by "${message.author.username}" at "${message.id}" on Channel "${message.channelId}"`);
 }
 function checkCommand(message){
-    if(message.content == "!test"){
+    if(message.content == `${config.prefix}test`){
         logToConsole(message);
         test(message);
-    }else if(message.content == "!dbstatus"){
+    }else if(message.content == `${config.prefix}dbstatus`){
         logToConsole(message);
         dbstatus(message)
     }
