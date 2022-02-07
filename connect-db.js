@@ -10,3 +10,4 @@ async function testConnection(){
     }
 }
 testConnection();
+sequelize.close();
