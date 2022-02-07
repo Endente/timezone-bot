@@ -4,7 +4,7 @@ const config = require('./config.json')
 const test = require('./test.js')
 function checkCommand(message){
     if(message.content == "!test"){
-        console.log(`Running "${message}"; Requested by "${message.author.username}" at "${message.id}"`);
+        console.log(`Running "${message}"; Requested by "${message.author.username}" at "${message.id}" on Channel "${message.channelId}"`);
         test(message);
     }
 }
