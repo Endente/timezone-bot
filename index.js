@@ -3,16 +3,23 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const config = require('./config.json')
 const test = require('./test.js')
 const connectdb = require('./connect-db.js')
+const dbstatus = require('./dbstatus.js')
+function logToConsole(message){
+    console.log(`Running "${message}"; Requested by "${message.author.username}" at "${message.id}" on Channel "${message.channelId}"`);
+}
 function checkCommand(message){
     if(message.content == "!test"){
-        console.log(`Running "${message}"; Requested by "${message.author.username}" at "${message.id}" on Channel "${message.channelId}"`);
+        logToConsole(message);
         test(message);
+    }else if(message.content == "!dbstatus"){
+        logToConsole(message);
+        dbstatus(message)
     }
 }
 connectdb
 client.on('ready', () => {
     console.log('Bot is now online.')
-    client.on("messageCreate", (message) => {
+    client.on("messageCreate", (message) => {;
         if(message.content.startsWith(config.prefix)){
             checkCommand(message);
         }
