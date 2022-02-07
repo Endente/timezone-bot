@@ -17,6 +17,7 @@ async function testConnection(message){
         logToConsole(message);
         message.channel.send('Unable to connect to the database.');
     }
+    sequelize.close();
 }
 module.exports = (message) => {
     testConnection(message);
