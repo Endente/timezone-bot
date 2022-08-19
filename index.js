@@ -3,7 +3,6 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const config = require('./config.json')
 const test = require('./test.js')
 const connectdb = require('./connect-db.js')
-const changePrefix = require('./changeprefix.js')
 const dbstatus = require('./dbstatus.js')
 const checkCommand = require('./checkCommand.js')
 function logToConsole(message){
@@ -14,6 +13,7 @@ client.on('ready', () => {
     console.log('Bot is now online.')
     client.on("messageCreate", (message) => {;
         if(message.content.startsWith(config.prefix)){
+            logToConsole(message);
             checkCommand(message);
         }
     })
