@@ -4,7 +4,7 @@ const { Sequelize } = require('sequelize');
 const client = require("./index")
 const sequelize = new Sequelize(`postgres://${config.dbUser}:${config.dbPass}@${config.dbAddress}:${config.dbPort}/${config.dbServer}`)
 function logToConsole(message){
-    console.log(`Running "${message}"; Requested by "${message.author.username}" at "${message.id}" on Channel "${message.channelId}"`);
+    console.log(`Running "${message}"; Requested by "${message.author.username}" at "${message.id}" on Channel "${message.channel.name}"`);
 }
 async function testConnection(message){
     try {

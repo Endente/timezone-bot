@@ -6,7 +6,7 @@ const connectdb = require('./connect-db.js')
 const dbstatus = require('./dbstatus.js')
 const checkCommand = require('./checkCommand.js')
 function logToConsole(message){
-    console.log(`Running "${message}"; Requested by "${message.author.username}" at "${message.id}" on Channel "${message.channelId}"`);
+    console.log(`Running "${message}"; Requested by "${message.author.username}" at "${message.id}" on Channel "${message.channel.name}"`);
 }
 connectdb
 client.on('ready', () => {
