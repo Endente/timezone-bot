@@ -10,12 +10,12 @@ function logToConsole(message){
 async function testConnection(message){
     try {
         await sequelize.authenticate();
-        console.log('Connection to database has been established successfully.');
         logToConsole(message);
+        console.log('Connection to database has been established successfully.');
         message.channel.send('Connection to the database has been established successfully.')
     } catch (error) {
-        console.error('Unable to connect to the database:', error);
         logToConsole(message);
+        console.error('Unable to connect to the database:', error);
         message.channel.send('Unable to connect to the database.');
     }
     sequelize.close();
