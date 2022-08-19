@@ -13,7 +13,6 @@ client.on('ready', () => {
     console.log('Bot is now online.')
     client.on("messageCreate", (message) => {;
         if(message.content.startsWith(config.prefix)){
-            logToConsole(message);
             checkCommand(message);
         }
     })
